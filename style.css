@@ -134,6 +134,70 @@ body {
   z-index: 999;
   transition: background 0.3s ease;
 }
+.cupcake-container {
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.cupcake-container img {
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cupcake-container img:hover {
+  transform: scale(1.1);
+}
+
+.click-hint {
+  font-size: 1rem;
+  color: #ff5e8e;
+  margin-bottom: 10px;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+.surprise-message {
+  font-size: 1.3rem;
+  color: #c9184a;
+  margin-top: 30px;
+  background: #fff0f5;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  animation: popIn 0.5s ease forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.confetti {
+  position: fixed;
+  top: -40px;
+  font-size: 1.5rem;
+  animation: fallConfetti 3s linear forwards;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes fallConfetti {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 
 #play-music-btn:hover {
   background: #ff85c1;
