@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom right, #ffe0f0, #fff5fa);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Poem Styling */
+.poem-container {
+  max-width: 750px;
+  margin: 80px auto;
+  padding: 40px;
+  background-color: #fff0f5;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 140, 160, 0.2);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.poem-title {
+  font-size: 2.5rem;
+  color: #d6336c;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease-out;
+}
+
+.poem-line {
+  font-size: 1.5rem;
+  color: #c9184a;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: var(--delay, 0s);
+  margin: 14px 0;
+}
+
+.poem-line:nth-child(2) { --delay: 0.5s; }
+.poem-line:nth-child(3) { --delay: 1.5s; }
+.poem-line:nth-child(4) { --delay: 2.5s; }
+.poem-line:nth-child(5) { --delay: 3.5s; }
+.poem-line:nth-child(6) { --delay: 4.5s; }
+.poem-line:nth-child(7) { --delay: 5.5s; }
+.poem-line:nth-child(8) { --delay: 6.5s; }
+.poem-line:nth-child(9) { --delay: 7.5s; }
+.poem-line.signature    { --delay: 8.5s; font-weight: bold; font-size: 1.3rem; color: #b02a4a; }
+
+.fashion-img {
+  width: 120px;
+  margin-top: 30px;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Falling strawberries (added by JS) */
+.falling-strawberry {
+  position: fixed;
+  top: -80px;
+  width: 40px;
+  opacity: 0.9;
+  animation: fall 7s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+.sparkle {
+  background: linear-gradient(90deg, #ff69b4, #ffb6c1, #ffc0cb, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% auto;
+  animation: sparkle-move 3s ease-in-out infinite;
+}
+
+@keyframes sparkle-move {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+#play-music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+#play-music-btn:hover {
+  background: #ff85c1;
+}
